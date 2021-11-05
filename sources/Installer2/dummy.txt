@@ -1,0 +1,4 @@
+﻿Installer 2 - Part of the Bundle with GUI project
+================================================================================
+
+This file is part of the first MSI that is installed by the BundleWithGui bundle.
