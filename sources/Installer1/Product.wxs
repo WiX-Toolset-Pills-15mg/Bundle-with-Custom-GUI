@@ -19,16 +19,24 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	
-    <Product Id="*" Name="Bundle with GUI Installer 1 - WiX Toolset Pill" Language="1033" Version="1.0.0.0" Manufacturer="Dust in the Wind" UpgradeCode="532660d7-0e27-4a90-935f-5b6ec7158a80">
-		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
-		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
-		<MediaTemplate />
+    <Product
+        Id="*"
+        Name="Bundle with GUI Installer 1 - WiX Toolset Pill"
+        Language="1033"
+        Version="1.0.0.0"
+        Manufacturer="Dust in the Wind"
+        UpgradeCode="532660d7-0e27-4a90-935f-5b6ec7158a80">
 
-		<Feature Id="ProductFeature" Title="Installer1" Level="1">
-			<ComponentGroupRef Id="ProductComponents" />
-		</Feature>
-	</Product>
+        <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+        <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+        <MediaTemplate />
+
+        <Feature Id="ProductFeature" Title="Installer1" Level="1">
+            <ComponentGroupRef Id="ProductComponents" />
+        </Feature>
+
+    </Product>
 
 </Wix>

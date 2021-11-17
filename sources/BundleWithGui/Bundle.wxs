@@ -21,7 +21,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <Wix
     xmlns="http://schemas.microsoft.com/wix/2006/wi">
 
-    <Bundle Name="BundleWithGui" Version="1.0.0.0" Manufacturer="Dust in the Wind" UpgradeCode="d5d1599c-aa21-48ed-b221-3de01c8439ae">
+    <Bundle
+        Name="BundleWithGui"
+        Version="1.0.0.0"
+        Manufacturer="Dust in the Wind"
+        UpgradeCode="d5d1599c-aa21-48ed-b221-3de01c8439ae">
 
         <WixVariable Id="WixMbaPrereqPackageId" Value="Netfx4Full" />
         <WixVariable Id="WixMbaPrereqLicenseUrl" Value="NetfxLicense.rtf" />
