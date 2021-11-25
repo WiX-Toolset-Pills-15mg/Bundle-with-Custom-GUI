@@ -28,7 +28,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         Manufacturer="Dust in the Wind"
         UpgradeCode="8efd46de-e0b6-4270-94eb-75248894b545">
 
-        <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+        <Package
+            InstallerVersion="200"
+            Compressed="yes"
+            InstallScope="perMachine" />
 
         <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
         <MediaTemplate />
