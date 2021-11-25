@@ -27,7 +27,7 @@ using Microsoft.Tools.WindowsInstallerXml.Bootstrapper;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Dust in the Wind")]
-[assembly: AssemblyProduct("BundleWithGui")]
+[assembly: AssemblyProduct("Wix Toolset Pills 15mg")]
 [assembly: AssemblyCopyright("Copyright © Dust in the Wind 2019-2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
