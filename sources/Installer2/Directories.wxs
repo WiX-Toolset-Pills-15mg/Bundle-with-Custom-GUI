@@ -24,7 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         <Directory Id="TARGETDIR" Name="SourceDir">
             <Directory Id="ProgramFilesFolder">
                 <Directory Id="ManufacturerFolder" Name="Dust in the Wind">
-                    <Directory Id="INSTALLFOLDER" Name="Bundle with GUI Installer2" />
+                    <Directory Id="INSTALLFOLDER" Name="Bundle with GUI Installer2 - WiX Toolset Pill" />
                 </Directory>
             </Directory>
         </Directory>
