@@ -1,5 +1,5 @@
 ﻿// WiX Toolset Pills 15mg
-// Copyright (C) 2019-2021 Dust in the Wind
+// Copyright (C) 2019-2022 Dust in the Wind
 // 
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -15,64 +15,63 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
-using System.Windows.Input;
 using System.Windows.Threading;
+using DustInTheWind.BundleWithGui.Gui.Commands;
 using Microsoft.Tools.WindowsInstallerXml.Bootstrapper;
 
-namespace BundleWithGui.Gui.Commands
+namespace DustInTheWind.BundleWithGui.Gui.ViewModels
 {
-    internal class InstallCommand : ICommand
+    internal class MainViewModel : ViewModelBase
     {
         private static Dispatcher dispatcher;
         private readonly CustomBootstrapperApplication bootstrapperApplication;
-        private bool canExecute;
 
-        public event EventHandler CanExecuteChanged;
+        private bool isLoading;
 
-        public InstallCommand(CustomBootstrapperApplication bootstrapperApplication)
+        public bool IsLoading
+        {
+            get => isLoading;
+            set
+            {
+                isLoading = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public InstallCommand InstallCommand { get; }
+
+        public UninstallCommand UninstallCommand { get; }
+
+        public ExitCommand ExitCommand { get; }
+
+        public MainViewModel(CustomBootstrapperApplication bootstrapperApplication)
         {
             this.bootstrapperApplication = bootstrapperApplication ?? throw new ArgumentNullException(nameof(bootstrapperApplication));
 
             dispatcher = Dispatcher.CurrentDispatcher;
 
+            InstallCommand = new InstallCommand(bootstrapperApplication);
+            UninstallCommand = new UninstallCommand(bootstrapperApplication);
+            ExitCommand = new ExitCommand(bootstrapperApplication);
+
             this.bootstrapperApplication.PlanBegin += HandlePlanBegin;
-            this.bootstrapperApplication.DetectPackageComplete += HandleDetectPackageComplete;
+            this.bootstrapperApplication.ApplyComplete += HandleApplyComplete;
         }
 
         private void HandlePlanBegin(object sender, PlanBeginEventArgs e)
         {
             dispatcher.Invoke(() =>
             {
-                canExecute = false;
-                OnCanExecuteChanged();
+                IsLoading = true;
             });
         }
 
-        private void HandleDetectPackageComplete(object sender, DetectPackageCompleteEventArgs e)
+        private void HandleApplyComplete(object sender, ApplyCompleteEventArgs e)
         {
             dispatcher.Invoke(() =>
             {
-                if (e.State == PackageState.Absent)
-                {
-                    canExecute = true;
-                    OnCanExecuteChanged();
-                }
+                IsLoading = false;
             });
-        }
-
-        public bool CanExecute(object parameter)
-        {
-            return canExecute;
-        }
-
-        public void Execute(object parameter)
-        {
-            bootstrapperApplication.Engine.Plan(LaunchAction.Install);
-        }
-
-        protected virtual void OnCanExecuteChanged()
-        {
-            CanExecuteChanged?.Invoke(this, EventArgs.Empty);
         }
     }
 }

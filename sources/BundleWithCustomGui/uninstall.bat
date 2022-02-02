@@ -1,0 +1,1 @@
+BundleWithCustomGui.exe /l uninstall.log

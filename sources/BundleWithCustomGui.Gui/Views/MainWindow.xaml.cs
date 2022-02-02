@@ -1,5 +1,5 @@
 ﻿// WiX Toolset Pills 15mg
-// Copyright (C) 2019-2021 Dust in the Wind
+// Copyright (C) 2019-2022 Dust in the Wind
 // 
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -16,7 +16,7 @@
 
 using System.Windows;
 
-namespace BundleWithGui.Gui.Views
+namespace DustInTheWind.BundleWithGui.Gui.Views
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

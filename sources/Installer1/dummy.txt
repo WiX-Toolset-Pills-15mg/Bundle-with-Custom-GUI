@@ -1,7 +1,8 @@
-﻿Installer 1 - Part of the Bundle with GUI project
-================================================================================
+﻿WiX Toolset Pills 15mg - Installer 1 - Part of the Bundle with Custom GUI project
+====================================================================================================
 
-This file is part of the Instaler1 MSI that is installed by the BundleWithGui bundle.
+The "Bundle with Custom GUI" project is an example that demonstrates how to create a custom GUI
+using WPF.
 
 For more details please chech the GitHub repository:
 https://github.com/WiX-Toolset-Pills-15mg/Bundle-with-GUI

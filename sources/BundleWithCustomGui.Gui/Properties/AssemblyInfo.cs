@@ -1,5 +1,5 @@
 ﻿// WixQ
-// Copyright (C) 2019 Dust in the Wind
+// Copyright (C) 2019-2022 Dust in the Wind
 // 
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows;
-using BundleWithGui.Gui;
+using DustInTheWind.BundleWithGui.Gui;
 using Microsoft.Tools.WindowsInstallerXml.Bootstrapper;
 
 // General Information about an assembly is controlled through the following
@@ -28,7 +28,7 @@ using Microsoft.Tools.WindowsInstallerXml.Bootstrapper;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Dust in the Wind")]
 [assembly: AssemblyProduct("WiX Toolset Pills 15mg")]
-[assembly: AssemblyCopyright("Copyright © Dust in the Wind 2019-2020")]
+[assembly: AssemblyCopyright("Copyright © Dust in the Wind 2019-2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

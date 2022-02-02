@@ -1,5 +1,5 @@
 ﻿// WiX Toolset Pills 15mg
-// Copyright (C) 2019-2021 Dust in the Wind
+// Copyright (C) 2019-2022 Dust in the Wind
 // 
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -16,11 +16,11 @@
 
 using System;
 using System.Windows.Threading;
-using BundleWithGui.Gui.ViewModels;
-using BundleWithGui.Gui.Views;
+using DustInTheWind.BundleWithGui.Gui.ViewModels;
+using DustInTheWind.BundleWithGui.Gui.Views;
 using Microsoft.Tools.WindowsInstallerXml.Bootstrapper;
 
-namespace BundleWithGui.Gui
+namespace DustInTheWind.BundleWithGui.Gui
 {
     public class CustomBootstrapperApplication : BootstrapperApplication
     {

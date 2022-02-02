@@ -1,0 +1,68 @@
+[C204:CC30][2022-02-03T00:26:59]i001: Burn v3.11.100.14523, Windows v10.0 (Build 19044: Service Pack 0), path: C:\Users\ALEXAN~1.IUG\AppData\Local\Temp\{4BB21363-C248-4EED-AC2A-CBA9BB1E4D38}\.cr\BundleWithCustomGui.exe
+[C204:CC30][2022-02-03T00:26:59]i009: Command Line: '"-burn.clean.room=c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\BundleWithCustomGui.exe" -burn.filehandle.attached=720 -burn.filehandle.self=576 /l install.log'
+[C204:CC30][2022-02-03T00:26:59]i000: Setting string variable 'WixBundleOriginalSource' to value 'c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\BundleWithCustomGui.exe'
+[C204:CC30][2022-02-03T00:26:59]i000: Setting string variable 'WixBundleOriginalSourceFolder' to value 'c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\'
+[C204:CC30][2022-02-03T00:26:59]i000: Setting string variable 'WixBundleLog' to value 'c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\install.log'
+[C204:CC30][2022-02-03T00:26:59]i000: Setting string variable 'WixBundleName' to value 'BundleWithGui'
+[C204:CC30][2022-02-03T00:26:59]i000: Setting string variable 'WixBundleManufacturer' to value 'Dust in the Wind'
+[C204:CC30][2022-02-03T00:26:59]i000: Loading managed bootstrapper application.
+[C204:CC30][2022-02-03T00:26:59]i000: Creating BA thread to run asynchronously.
+[C204:0AD4][2022-02-03T00:26:59]i000: Launching custom Bootstrapper Application UX
+[C204:CC30][2022-02-03T00:26:59]i100: Detect begin, 2 packages
+[C204:CC30][2022-02-03T00:27:00]i101: Detected package: Installer1.msi, state: Absent, cached: None
+[C204:CC30][2022-02-03T00:27:00]i101: Detected package: Installer2.msi, state: Absent, cached: None
+[C204:CC30][2022-02-03T00:27:00]i199: Detect complete, result: 0x0
+[C204:CC30][2022-02-03T00:27:01]i200: Plan begin, 2 packages, action: Install
+[C204:CC30][2022-02-03T00:27:01]i000: Setting string variable 'WixBundleRollbackLog_Installer1.msi' to value 'c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\install_000_Installer1.msi_rollback.log'
+[C204:CC30][2022-02-03T00:27:01]i000: Setting string variable 'WixBundleLog_Installer1.msi' to value 'c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\install_000_Installer1.msi.log'
+[C204:CC30][2022-02-03T00:27:01]i000: Setting string variable 'WixBundleRollbackLog_Installer2.msi' to value 'c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\install_001_Installer2.msi_rollback.log'
+[C204:CC30][2022-02-03T00:27:01]i000: Setting string variable 'WixBundleLog_Installer2.msi' to value 'c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\install_001_Installer2.msi.log'
+[C204:CC30][2022-02-03T00:27:01]i201: Planned package: Installer1.msi, state: Absent, default requested: Present, ba requested: Present, execute: Install, rollback: Uninstall, cache: Yes, uncache: No, dependency: Register
+[C204:CC30][2022-02-03T00:27:01]i201: Planned package: Installer2.msi, state: Absent, default requested: Present, ba requested: Present, execute: Install, rollback: Uninstall, cache: Yes, uncache: No, dependency: Register
+[C204:CC30][2022-02-03T00:27:01]i299: Plan complete, result: 0x0
+[C204:CC30][2022-02-03T00:27:01]i300: Apply begin
+[C204:CC30][2022-02-03T00:27:01]i010: Launching elevated engine process.
+[C204:CC30][2022-02-03T00:27:05]i011: Launched elevated engine process.
+[C204:CC30][2022-02-03T00:27:05]i012: Connected to elevated engine.
+[89DC:A788][2022-02-03T00:27:05]i358: Pausing automatic updates.
+[89DC:A788][2022-02-03T00:27:05]i359: Paused automatic updates.
+[89DC:A788][2022-02-03T00:27:05]i360: Creating a system restore point.
+[89DC:A788][2022-02-03T00:27:05]i361: Created a system restore point.
+[89DC:A788][2022-02-03T00:27:05]i370: Session begin, registration key: SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{53ea1868-bf95-471c-b12a-789312928991}, options: 0x7, disable resume: No
+[89DC:A788][2022-02-03T00:27:06]i000: Caching bundle from: 'C:\Users\ALEXAN~1.IUG\AppData\Local\Temp\{D926ECE9-5448-4149-A45A-9557C84CEAF7}\.be\BundleWithCustomGui.exe' to: 'C:\ProgramData\Package Cache\{53ea1868-bf95-471c-b12a-789312928991}\BundleWithCustomGui.exe'
+[89DC:A788][2022-02-03T00:27:07]i320: Registering bundle dependency provider: {53ea1868-bf95-471c-b12a-789312928991}, version: 1.0.0.0
+[89DC:A788][2022-02-03T00:27:07]i371: Updating session, registration key: SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{53ea1868-bf95-471c-b12a-789312928991}, resume: Active, restart initiated: No, disable resume: No
+[89DC:3D8C][2022-02-03T00:27:07]i305: Verified acquired payload: Installer1.msi at path: C:\ProgramData\Package Cache\.unverified\Installer1.msi, moving to: C:\ProgramData\Package Cache\{C2795F9C-50EC-4A0E-9D5A-8008A968BD1C}v1.0.0.0\Installer1.msi.
+[89DC:3D8C][2022-02-03T00:27:07]i305: Verified acquired payload: cab9F16B3EAE993C10BDBC689BD7F7CD1EA at path: C:\ProgramData\Package Cache\.unverified\cab9F16B3EAE993C10BDBC689BD7F7CD1EA, moving to: C:\ProgramData\Package Cache\{C2795F9C-50EC-4A0E-9D5A-8008A968BD1C}v1.0.0.0\cab1.cab.
+[89DC:3D8C][2022-02-03T00:27:07]i305: Verified acquired payload: Installer2.msi at path: C:\ProgramData\Package Cache\.unverified\Installer2.msi, moving to: C:\ProgramData\Package Cache\{10C35E75-77FE-4862-A8FE-5DC35B6E46DF}v1.0.0.0\Installer2.msi.
+[89DC:3D8C][2022-02-03T00:27:07]i305: Verified acquired payload: cab9CBDA12498ECE47DD285B52FC2DC39DA at path: C:\ProgramData\Package Cache\.unverified\cab9CBDA12498ECE47DD285B52FC2DC39DA, moving to: C:\ProgramData\Package Cache\{10C35E75-77FE-4862-A8FE-5DC35B6E46DF}v1.0.0.0\cab1.cab.
+[89DC:A788][2022-02-03T00:27:07]i323: Registering package dependency provider: {C2795F9C-50EC-4A0E-9D5A-8008A968BD1C}, version: 1.0.0.0, package: Installer1.msi
+[89DC:A788][2022-02-03T00:27:07]i301: Applying execute package: Installer1.msi, action: Install, path: C:\ProgramData\Package Cache\{C2795F9C-50EC-4A0E-9D5A-8008A968BD1C}v1.0.0.0\Installer1.msi, arguments: ' ARPSYSTEMCOMPONENT="1" MSIFASTINSTALL="7"'
+[C204:CC30][2022-02-03T00:27:08]i319: Applied execute package: Installer1.msi, result: 0x0, restart: None
+[89DC:A788][2022-02-03T00:27:08]i325: Registering dependency: {53ea1868-bf95-471c-b12a-789312928991} on package provider: {C2795F9C-50EC-4A0E-9D5A-8008A968BD1C}, package: Installer1.msi
+[89DC:A788][2022-02-03T00:27:08]i323: Registering package dependency provider: {10C35E75-77FE-4862-A8FE-5DC35B6E46DF}, version: 1.0.0.0, package: Installer2.msi
+[89DC:A788][2022-02-03T00:27:08]i301: Applying execute package: Installer2.msi, action: Install, path: C:\ProgramData\Package Cache\{10C35E75-77FE-4862-A8FE-5DC35B6E46DF}v1.0.0.0\Installer2.msi, arguments: ' ARPSYSTEMCOMPONENT="1" MSIFASTINSTALL="7"'
+[C204:CC30][2022-02-03T00:27:09]i319: Applied execute package: Installer2.msi, result: 0x0, restart: None
+[89DC:A788][2022-02-03T00:27:09]i325: Registering dependency: {53ea1868-bf95-471c-b12a-789312928991} on package provider: {10C35E75-77FE-4862-A8FE-5DC35B6E46DF}, package: Installer2.msi
+[89DC:A788][2022-02-03T00:27:09]i372: Session end, registration key: SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{53ea1868-bf95-471c-b12a-789312928991}, resume: ARP, restart: None, disable resume: No
+[89DC:A788][2022-02-03T00:27:09]i371: Updating session, registration key: SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{53ea1868-bf95-471c-b12a-789312928991}, resume: ARP, restart initiated: No, disable resume: No
+[C204:CC30][2022-02-03T00:27:09]i399: Apply complete, result: 0x0, restart: None, ba requested restart:  No
+[C204:CC30][2022-02-03T00:27:11]i500: Shutting down, exit code: 0x0
+[C204:CC30][2022-02-03T00:27:11]i410: Variable: WixBundleAction = 5
+[C204:CC30][2022-02-03T00:27:11]i410: Variable: WixBundleElevated = 1
+[C204:CC30][2022-02-03T00:27:11]i410: Variable: WixBundleLog = c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\install.log
+[C204:CC30][2022-02-03T00:27:11]i410: Variable: WixBundleLog_Installer1.msi = c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\install_000_Installer1.msi.log
+[C204:CC30][2022-02-03T00:27:11]i410: Variable: WixBundleLog_Installer2.msi = c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\install_001_Installer2.msi.log
+[C204:CC30][2022-02-03T00:27:11]i410: Variable: WixBundleManufacturer = Dust in the Wind
+[C204:CC30][2022-02-03T00:27:11]i410: Variable: WixBundleName = BundleWithGui
+[C204:CC30][2022-02-03T00:27:11]i410: Variable: WixBundleOriginalSource = c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\BundleWithCustomGui.exe
+[C204:CC30][2022-02-03T00:27:11]i410: Variable: WixBundleOriginalSourceFolder = c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\
+[C204:CC30][2022-02-03T00:27:11]i410: Variable: WixBundleProviderKey = {53ea1868-bf95-471c-b12a-789312928991}
+[C204:CC30][2022-02-03T00:27:11]i410: Variable: WixBundleRollbackLog_Installer1.msi = c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\install_000_Installer1.msi_rollback.log
+[C204:CC30][2022-02-03T00:27:11]i410: Variable: WixBundleRollbackLog_Installer2.msi = c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\install_001_Installer2.msi_rollback.log
+[C204:CC30][2022-02-03T00:27:11]i410: Variable: WixBundleSourceProcessFolder = c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\
+[C204:CC30][2022-02-03T00:27:11]i410: Variable: WixBundleSourceProcessPath = c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\BundleWithCustomGui.exe
+[C204:CC30][2022-02-03T00:27:11]i410: Variable: WixBundleTag = 
+[C204:CC30][2022-02-03T00:27:11]i410: Variable: WixBundleUILevel = 4
+[C204:CC30][2022-02-03T00:27:11]i410: Variable: WixBundleVersion = 1.0.0.0
+[C204:CC30][2022-02-03T00:27:11]i007: Exit code: 0x0, restarting: No

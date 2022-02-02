@@ -1,6 +1,6 @@
 ﻿<!--
 WiX Toolset Pills 15mg
-Copyright (C) 2019-2021 Dust in the Wind
+Copyright (C) 2019-2022 Dust in the Wind
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -17,13 +17,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 
 <Window
-    x:Class="BundleWithGui.Gui.Views.MainWindow"
+    x:Class="DustInTheWind.BundleWithGui.Gui.Views.MainWindow"
        
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:viewModels="clr-namespace:BundleWithGui.Gui.ViewModels"
+    xmlns:viewModels="clr-namespace:DustInTheWind.BundleWithGui.Gui.ViewModels"
 
     mc:Ignorable="d"
     Title="Installer" 

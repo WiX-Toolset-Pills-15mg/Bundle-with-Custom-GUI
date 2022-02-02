@@ -1,0 +1,65 @@
+[9898:CD04][2022-02-03T00:28:10]i001: Burn v3.11.100.14523, Windows v10.0 (Build 19044: Service Pack 0), path: C:\Users\ALEXAN~1.IUG\AppData\Local\Temp\{E9448AEC-8CDE-4EA3-840D-004ADC4E9A41}\.cr\BundleWithCustomGui.exe
+[9898:CD04][2022-02-03T00:28:10]i009: Command Line: '"-burn.clean.room=c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\BundleWithCustomGui.exe" -burn.filehandle.attached=556 -burn.filehandle.self=680 /l uninstall.log'
+[9898:CD04][2022-02-03T00:28:10]i000: Setting string variable 'WixBundleOriginalSource' to value 'c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\BundleWithCustomGui.exe'
+[9898:CD04][2022-02-03T00:28:10]i000: Setting string variable 'WixBundleOriginalSourceFolder' to value 'c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\'
+[9898:CD04][2022-02-03T00:28:11]i000: Setting string variable 'WixBundleLog' to value 'c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\uninstall.log'
+[9898:CD04][2022-02-03T00:28:11]i000: Setting string variable 'WixBundleManufacturer' to value 'Dust in the Wind'
+[9898:CD04][2022-02-03T00:28:11]i000: Loading managed bootstrapper application.
+[9898:CD04][2022-02-03T00:28:11]i000: Creating BA thread to run asynchronously.
+[9898:05B4][2022-02-03T00:28:11]i000: Launching custom Bootstrapper Application UX
+[9898:CD04][2022-02-03T00:28:11]i100: Detect begin, 2 packages
+[9898:CD04][2022-02-03T00:28:12]i101: Detected package: Installer1.msi, state: Present, cached: Complete
+[9898:CD04][2022-02-03T00:28:12]i101: Detected package: Installer2.msi, state: Present, cached: Complete
+[9898:CD04][2022-02-03T00:28:12]i199: Detect complete, result: 0x0
+[9898:CD04][2022-02-03T00:28:18]i200: Plan begin, 2 packages, action: Uninstall
+[9898:CD04][2022-02-03T00:28:18]i000: Setting string variable 'WixBundleRollbackLog_Installer2.msi' to value 'c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\uninstall_000_Installer2.msi_rollback.log'
+[9898:CD04][2022-02-03T00:28:18]i000: Setting string variable 'WixBundleLog_Installer2.msi' to value 'c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\uninstall_000_Installer2.msi.log'
+[9898:CD04][2022-02-03T00:28:18]i000: Setting string variable 'WixBundleRollbackLog_Installer1.msi' to value 'c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\uninstall_001_Installer1.msi_rollback.log'
+[9898:CD04][2022-02-03T00:28:18]i000: Setting string variable 'WixBundleLog_Installer1.msi' to value 'c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\uninstall_001_Installer1.msi.log'
+[9898:CD04][2022-02-03T00:28:18]i201: Planned package: Installer2.msi, state: Present, default requested: Absent, ba requested: Absent, execute: Uninstall, rollback: Install, cache: No, uncache: Yes, dependency: Unregister
+[9898:CD04][2022-02-03T00:28:18]i201: Planned package: Installer1.msi, state: Present, default requested: Absent, ba requested: Absent, execute: Uninstall, rollback: Install, cache: No, uncache: Yes, dependency: Unregister
+[9898:CD04][2022-02-03T00:28:18]i299: Plan complete, result: 0x0
+[9898:CD04][2022-02-03T00:28:18]i300: Apply begin
+[9898:CD04][2022-02-03T00:28:18]i010: Launching elevated engine process.
+[9898:CD04][2022-02-03T00:28:24]i011: Launched elevated engine process.
+[9898:CD04][2022-02-03T00:28:24]i012: Connected to elevated engine.
+[8828:C7C4][2022-02-03T00:28:24]i358: Pausing automatic updates.
+[8828:C7C4][2022-02-03T00:28:24]i359: Paused automatic updates.
+[8828:C7C4][2022-02-03T00:28:24]i360: Creating a system restore point.
+[8828:C7C4][2022-02-03T00:28:24]i361: Created a system restore point.
+[8828:C7C4][2022-02-03T00:28:24]i371: Updating session, registration key: SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{53ea1868-bf95-471c-b12a-789312928991}, resume: Active, restart initiated: No, disable resume: No
+[8828:C7C4][2022-02-03T00:28:24]i326: Removed dependency: {53ea1868-bf95-471c-b12a-789312928991} on package provider: {10C35E75-77FE-4862-A8FE-5DC35B6E46DF}, package Installer2.msi
+[8828:C7C4][2022-02-03T00:28:24]i329: Removed package dependency provider: {10C35E75-77FE-4862-A8FE-5DC35B6E46DF}, package: Installer2.msi
+[8828:C7C4][2022-02-03T00:28:24]i301: Applying execute package: Installer2.msi, action: Uninstall, path: (null), arguments: ' ARPSYSTEMCOMPONENT="1" MSIFASTINSTALL="7"'
+[9898:CD04][2022-02-03T00:28:25]i319: Applied execute package: Installer2.msi, result: 0x0, restart: None
+[8828:C7C4][2022-02-03T00:28:25]i326: Removed dependency: {53ea1868-bf95-471c-b12a-789312928991} on package provider: {C2795F9C-50EC-4A0E-9D5A-8008A968BD1C}, package Installer1.msi
+[8828:C7C4][2022-02-03T00:28:25]i329: Removed package dependency provider: {C2795F9C-50EC-4A0E-9D5A-8008A968BD1C}, package: Installer1.msi
+[8828:C7C4][2022-02-03T00:28:25]i301: Applying execute package: Installer1.msi, action: Uninstall, path: (null), arguments: ' ARPSYSTEMCOMPONENT="1" MSIFASTINSTALL="7"'
+[9898:CD04][2022-02-03T00:28:26]i319: Applied execute package: Installer1.msi, result: 0x0, restart: None
+[8828:C7C4][2022-02-03T00:28:26]i351: Removing cached package: Installer2.msi, from path: C:\ProgramData\Package Cache\{10C35E75-77FE-4862-A8FE-5DC35B6E46DF}v1.0.0.0\
+[8828:C7C4][2022-02-03T00:28:26]i351: Removing cached package: Installer1.msi, from path: C:\ProgramData\Package Cache\{C2795F9C-50EC-4A0E-9D5A-8008A968BD1C}v1.0.0.0\
+[8828:C7C4][2022-02-03T00:28:26]i372: Session end, registration key: SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{53ea1868-bf95-471c-b12a-789312928991}, resume: None, restart: None, disable resume: No
+[8828:C7C4][2022-02-03T00:28:26]i330: Removed bundle dependency provider: {53ea1868-bf95-471c-b12a-789312928991}
+[8828:C7C4][2022-02-03T00:28:26]i352: Removing cached bundle: {53ea1868-bf95-471c-b12a-789312928991}, from path: C:\ProgramData\Package Cache\{53ea1868-bf95-471c-b12a-789312928991}\
+[8828:C7C4][2022-02-03T00:28:26]i371: Updating session, registration key: SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\{53ea1868-bf95-471c-b12a-789312928991}, resume: None, restart initiated: No, disable resume: No
+[9898:CD04][2022-02-03T00:28:26]i399: Apply complete, result: 0x0, restart: None, ba requested restart:  No
+[9898:CD04][2022-02-03T00:28:30]i500: Shutting down, exit code: 0x0
+[9898:CD04][2022-02-03T00:28:30]i410: Variable: WixBundleAction = 3
+[9898:CD04][2022-02-03T00:28:30]i410: Variable: WixBundleElevated = 1
+[9898:CD04][2022-02-03T00:28:30]i410: Variable: WixBundleInstalled = 1
+[9898:CD04][2022-02-03T00:28:30]i410: Variable: WixBundleLog = c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\uninstall.log
+[9898:CD04][2022-02-03T00:28:30]i410: Variable: WixBundleLog_Installer1.msi = c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\uninstall_001_Installer1.msi.log
+[9898:CD04][2022-02-03T00:28:30]i410: Variable: WixBundleLog_Installer2.msi = c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\uninstall_000_Installer2.msi.log
+[9898:CD04][2022-02-03T00:28:30]i410: Variable: WixBundleManufacturer = Dust in the Wind
+[9898:CD04][2022-02-03T00:28:30]i410: Variable: WixBundleName = BundleWithGui
+[9898:CD04][2022-02-03T00:28:30]i410: Variable: WixBundleOriginalSource = c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\BundleWithCustomGui.exe
+[9898:CD04][2022-02-03T00:28:30]i410: Variable: WixBundleOriginalSourceFolder = c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\
+[9898:CD04][2022-02-03T00:28:30]i410: Variable: WixBundleProviderKey = {53ea1868-bf95-471c-b12a-789312928991}
+[9898:CD04][2022-02-03T00:28:30]i410: Variable: WixBundleRollbackLog_Installer1.msi = c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\uninstall_001_Installer1.msi_rollback.log
+[9898:CD04][2022-02-03T00:28:30]i410: Variable: WixBundleRollbackLog_Installer2.msi = c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\uninstall_000_Installer2.msi_rollback.log
+[9898:CD04][2022-02-03T00:28:30]i410: Variable: WixBundleSourceProcessFolder = c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\
+[9898:CD04][2022-02-03T00:28:30]i410: Variable: WixBundleSourceProcessPath = c:\Projects\WiX Toolset Pills\Bundle with Custom GUI\sources\BundleWithCustomGui\bin\Release\BundleWithCustomGui.exe
+[9898:CD04][2022-02-03T00:28:30]i410: Variable: WixBundleTag = 
+[9898:CD04][2022-02-03T00:28:30]i410: Variable: WixBundleUILevel = 4
+[9898:CD04][2022-02-03T00:28:30]i410: Variable: WixBundleVersion = 1.0.0.0
+[9898:CD04][2022-02-03T00:28:31]i007: Exit code: 0x0, restarting: No
