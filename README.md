@@ -1,4 +1,4 @@
-# Bundle with GUI
+# Bundle with Custom GUI
 
 ## Description
 
