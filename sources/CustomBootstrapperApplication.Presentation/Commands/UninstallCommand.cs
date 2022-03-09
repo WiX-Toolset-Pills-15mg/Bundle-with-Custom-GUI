@@ -15,6 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
+using System.Linq;
 using System.Windows.Input;
 using System.Windows.Threading;
 using DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Domain;
@@ -25,7 +26,7 @@ namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Presen
     {
         private static Dispatcher dispatcher;
         private readonly IWixEngine wixEngine;
-        private bool canExecute;
+        private volatile bool canExecute;
 
         public event EventHandler CanExecuteChanged;
 
@@ -36,7 +37,7 @@ namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Presen
             dispatcher = Dispatcher.CurrentDispatcher;
 
             wixEngine.PlanBegin += HandlePlanBegin;
-            wixEngine.DetectPackageComplete += HandleDetectPackageComplete;
+            wixEngine.DetectComplete += HandleDetectComplete;
         }
 
         private void HandlePlanBegin(object sender, EventArgs e)
@@ -48,11 +49,13 @@ namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Presen
             });
         }
 
-        private void HandleDetectPackageComplete(object sender, DetectPackageEventArgs e)
+        private void HandleDetectComplete(object sender, DetectEventArgs e)
         {
             dispatcher.Invoke(() =>
             {
-                if (e.State == PackageState.Present)
+                bool isAnyPackagePresent = e.Packages.Any(x => x.State == PackageState.Present);
+
+                if (isAnyPackagePresent)
                 {
                     canExecute = true;
                     OnCanExecuteChanged();

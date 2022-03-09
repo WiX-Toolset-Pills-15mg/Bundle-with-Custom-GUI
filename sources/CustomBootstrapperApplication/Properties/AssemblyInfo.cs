@@ -1,4 +1,4 @@
-﻿// WixQ
+﻿// WiX Toolset Pills 15mg
 // Copyright (C) 2019-2022 Dust in the Wind
 // 
 // This program is free software: you can redistribute it and/or modify
@@ -26,10 +26,6 @@ using Microsoft.Tools.WindowsInstallerXml.Bootstrapper;
 [assembly: AssemblyTitle("CustomBootstrapperApplication")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Dust in the Wind")]
-[assembly: AssemblyProduct("WiX Toolset Pills 15mg")]
-[assembly: AssemblyCopyright("Copyright © Dust in the Wind 2019-2022")]
-[assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -55,19 +51,5 @@ using Microsoft.Tools.WindowsInstallerXml.Bootstrapper;
     //(used if a resource is not found in the page,
     // app, or any theme specific resource dictionaries)
 )]
-
-
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Build and Revision Numbers
-// by using the '*' as shown below:
-// [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
 
 [assembly: BootstrapperApplication(typeof(CustomBootstrapperApplication))]

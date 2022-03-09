@@ -25,7 +25,7 @@ namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Presen
     {
         private static Dispatcher dispatcher;
         private readonly IWixEngine wixEngine;
-        private bool canExecute = true;
+        private volatile bool canExecute = true;
 
         public event EventHandler CanExecuteChanged;
 

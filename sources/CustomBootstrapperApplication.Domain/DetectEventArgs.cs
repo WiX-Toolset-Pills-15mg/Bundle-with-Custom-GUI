@@ -15,24 +15,18 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Domain
 {
-    public interface IWixEngine
+    public class DetectEventArgs : EventArgs
     {
-        event EventHandler<DetectEventArgs> DetectComplete;
-        event EventHandler PlanBegin;
-        event EventHandler<PlanCompleteEventArgs> PlanComplete;
-        event EventHandler ApplyComplete;
+        public ReadOnlyCollection<Package> Packages { get; }
 
-        void Detect();
-
-        void PlanInstall();
-
-        void PlanUninstall();
-
-        void Apply();
-        
-        void InvokeShutDown();
+        public DetectEventArgs(IList<Package> packages)
+        {
+            Packages = new ReadOnlyCollection<Package>(packages);
+        }
     }
 }

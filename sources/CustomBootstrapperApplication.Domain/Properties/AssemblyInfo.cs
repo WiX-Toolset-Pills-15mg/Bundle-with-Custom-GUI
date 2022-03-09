@@ -1,4 +1,4 @@
-﻿// WixQ
+﻿// WiX Toolset Pills 15mg
 // Copyright (C) 2019-2022 Dust in the Wind
 // 
 // This program is free software: you can redistribute it and/or modify
@@ -15,7 +15,6 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
@@ -24,10 +23,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("CustomBootstrapperApplication.Domain")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Dust in the Wind")]
-[assembly: AssemblyProduct("WiX Toolset Pills 15mg")]
-[assembly: AssemblyCopyright("Copyright © Dust in the Wind 2019-2022")]
-[assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -37,16 +32,3 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("c115ede2-f72a-4960-a47f-e8a84a8abafe")]
-
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Build and Revision Numbers
-// by using the '*' as shown below:
-// [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]

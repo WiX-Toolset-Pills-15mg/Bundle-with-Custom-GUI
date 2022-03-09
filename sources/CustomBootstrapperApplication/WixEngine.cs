@@ -15,6 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections.Generic;
 using DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Domain;
 using Microsoft.Tools.WindowsInstallerXml.Bootstrapper;
 using PlanCompleteEventArgs = DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Domain.PlanCompleteEventArgs;
@@ -24,8 +25,9 @@ namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication
     internal class WixEngine : IWixEngine
     {
         private readonly CustomBootstrapperApplication customBootstrapperApplication;
+        private readonly List<Package> packages = new List<Package>();
 
-        public event EventHandler<DetectPackageEventArgs> DetectPackageComplete;
+        public event EventHandler<DetectEventArgs> DetectComplete;
         public event EventHandler PlanBegin;
         public event EventHandler<PlanCompleteEventArgs> PlanComplete;
         public event EventHandler ApplyComplete;
@@ -34,16 +36,33 @@ namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication
         {
             this.customBootstrapperApplication = customBootstrapperApplication ?? throw new ArgumentNullException(nameof(customBootstrapperApplication));
 
+            customBootstrapperApplication.DetectBegin += HandleDetectBegin;
             customBootstrapperApplication.DetectPackageComplete += HandleDetectPackageComplete;
+            customBootstrapperApplication.DetectComplete += HandleDetectComplete;
             customBootstrapperApplication.PlanBegin += HandlePlanBegin;
             customBootstrapperApplication.PlanComplete += HandlePlanComplete;
             customBootstrapperApplication.ApplyComplete += HandleApplyComplete;
         }
 
+        private void HandleDetectBegin(object sender, DetectBeginEventArgs e)
+        {
+            packages.Clear();
+        }
+
         private void HandleDetectPackageComplete(object sender, DetectPackageCompleteEventArgs e)
         {
-            DetectPackageEventArgs args = new DetectPackageEventArgs(e.State.ToLocalEntity());
-            OnDetectPackageComplete(args);
+            Package package = new Package
+            {
+                Id = e.PackageId,
+                State = e.State.ToLocalEntity()
+            };
+            packages.Add(package);
+        }
+
+        private void HandleDetectComplete(object sender, DetectCompleteEventArgs e)
+        {
+            DetectEventArgs args = new DetectEventArgs(packages);
+            OnDetectComplete(args);
         }
 
         private void HandlePlanBegin(object sender, PlanBeginEventArgs e)
@@ -87,9 +106,9 @@ namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication
             customBootstrapperApplication.InvokeShutdown();
         }
 
-        protected virtual void OnDetectPackageComplete(DetectPackageEventArgs e)
+        protected virtual void OnDetectComplete(DetectEventArgs e)
         {
-            DetectPackageComplete?.Invoke(this, e);
+            DetectComplete?.Invoke(this, e);
         }
 
         protected virtual void OnPlanBegin()

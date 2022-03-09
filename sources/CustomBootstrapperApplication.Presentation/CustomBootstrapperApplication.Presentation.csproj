@@ -48,9 +48,13 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\AssemblyInfo.Shared.cs">
+      <Link>Properties\AssemblyInfo.Shared.cs</Link>
+    </Compile>
     <Compile Include="Commands\ExitCommand.cs" />
     <Compile Include="Commands\InstallCommand.cs" />
     <Compile Include="Commands\UninstallCommand.cs" />
+    <Compile Include="GuiApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

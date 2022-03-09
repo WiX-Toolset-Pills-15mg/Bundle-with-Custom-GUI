@@ -14,17 +14,12 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System;
-
 namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Domain
 {
-    public class DetectPackageEventArgs : EventArgs
+    public class Package
     {
-        public PackageState State { get; }
+        public string Id { get; set; }
 
-        public DetectPackageEventArgs(PackageState state)
-        {
-            State = state;
-        }
+        public PackageState State { get; set; }
     }
 }

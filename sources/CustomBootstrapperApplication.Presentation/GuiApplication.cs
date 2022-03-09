@@ -20,9 +20,9 @@ using DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Domain;
 using DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Presentation.ViewModels;
 using DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Presentation.Views;
 
-namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication
+namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Presentation
 {
-    internal class GuiApplication
+    public class GuiApplication
     {
         private readonly IWixEngine wixEngine;
         private readonly MainWindow mainView;
