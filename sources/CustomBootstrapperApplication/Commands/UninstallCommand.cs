@@ -21,25 +21,25 @@ using Microsoft.Tools.WindowsInstallerXml.Bootstrapper;
 
 namespace DustInTheWind.BundleWithGui.Gui.Commands
 {
-    internal class InstallCommand : ICommand
+    internal class UninstallCommand : ICommand
     {
         private static Dispatcher dispatcher;
-        private readonly CustomBootstrapperApplication bootstrapperApplication;
+        private readonly IWixEngine wixEngine;
         private bool canExecute;
 
         public event EventHandler CanExecuteChanged;
 
-        public InstallCommand(CustomBootstrapperApplication bootstrapperApplication)
+        public UninstallCommand(IWixEngine wixEngine)
         {
-            this.bootstrapperApplication = bootstrapperApplication ?? throw new ArgumentNullException(nameof(bootstrapperApplication));
+            this.wixEngine = wixEngine ?? throw new ArgumentNullException(nameof(wixEngine));
 
             dispatcher = Dispatcher.CurrentDispatcher;
 
-            this.bootstrapperApplication.PlanBegin += HandlePlanBegin;
-            this.bootstrapperApplication.DetectPackageComplete += HandleDetectPackageComplete;
+            wixEngine.PlanBegin += HandlePlanBegin;
+            wixEngine.DetectPackageComplete += HandleDetectPackageComplete;
         }
 
-        private void HandlePlanBegin(object sender, PlanBeginEventArgs e)
+        private void HandlePlanBegin(object sender, EventArgs e)
         {
             dispatcher.Invoke(() =>
             {
@@ -48,11 +48,11 @@ namespace DustInTheWind.BundleWithGui.Gui.Commands
             });
         }
 
-        private void HandleDetectPackageComplete(object sender, DetectPackageCompleteEventArgs e)
+        private void HandleDetectPackageComplete(object sender, DetectPackageEventArgs e)
         {
             dispatcher.Invoke(() =>
             {
-                if (e.State == PackageState.Absent)
+                if (e.State == PackageState.Present)
                 {
                     canExecute = true;
                     OnCanExecuteChanged();
@@ -67,7 +67,7 @@ namespace DustInTheWind.BundleWithGui.Gui.Commands
 
         public void Execute(object parameter)
         {
-            bootstrapperApplication.Engine.Plan(LaunchAction.Install);
+            wixEngine.PlanUninstall();
         }
 
         protected virtual void OnCanExecuteChanged()

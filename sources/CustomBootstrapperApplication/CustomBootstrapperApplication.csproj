@@ -60,10 +60,17 @@
     <Compile Include="Commands\ExitCommand.cs" />
     <Compile Include="Commands\InstallCommand.cs" />
     <Compile Include="Commands\UninstallCommand.cs" />
+    <Compile Include="DetectPackageEventArgs.cs" />
+    <Compile Include="GuiApplication.cs" />
+    <Compile Include="PackageState.cs" />
+    <Compile Include="PackageStateExtensions.cs" />
+    <Compile Include="PlanCompleteEventArgs.cs" />
+    <Compile Include="WixEngine.cs" />
     <Page Include="Themes\ButtonStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="IWixEngine.cs" />
     <Compile Include="ViewModelBase.cs" />
     <Page Include="Themes\TextBlockStyle.xaml">
       <SubType>Designer</SubType>

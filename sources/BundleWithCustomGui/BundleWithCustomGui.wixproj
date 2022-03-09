@@ -29,7 +29,7 @@
     </WixExtension>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BundleWithCustomGui.Gui\CustomBootstrapperApplication.csproj">
+    <ProjectReference Include="..\CustomBootstrapperApplication\CustomBootstrapperApplication.csproj">
       <Name>CustomBootstrapperApplication</Name>
       <Project>{1ff19117-6f64-4faf-a152-51fb188ae3ce}</Project>
       <Private>True</Private>

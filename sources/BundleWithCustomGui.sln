@@ -7,7 +7,7 @@ Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "BundleWithCustomGui", "Bund
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Installer1", "Installer1\Installer1.wixproj", "{BBEB17C0-76CA-4A66-ADE2-86FF73155A5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomBootstrapperApplication", "BundleWithCustomGui.Gui\CustomBootstrapperApplication.csproj", "{1FF19117-6F64-4FAF-A152-51FB188AE3CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomBootstrapperApplication", "CustomBootstrapperApplication\CustomBootstrapperApplication.csproj", "{1FF19117-6F64-4FAF-A152-51FB188AE3CE}"
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Installer2", "Installer2\Installer2.wixproj", "{76E0D0D3-3F34-4760-97C8-BFB3DD2EAB86}"
 EndProject

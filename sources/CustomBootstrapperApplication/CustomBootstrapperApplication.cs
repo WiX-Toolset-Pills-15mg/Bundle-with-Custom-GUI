@@ -14,53 +14,28 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System;
-using System.Windows.Threading;
-using DustInTheWind.BundleWithGui.Gui.ViewModels;
-using DustInTheWind.BundleWithGui.Gui.Views;
 using Microsoft.Tools.WindowsInstallerXml.Bootstrapper;
 
 namespace DustInTheWind.BundleWithGui.Gui
 {
     public class CustomBootstrapperApplication : BootstrapperApplication
     {
-        private static Dispatcher bootstrapperDispatcher;
+        private GuiApplication guiApplication;
 
         protected override void Run()
         {
             Engine.Log(LogLevel.Verbose, "Launching custom Bootstrapper Application UX");
 
-            bootstrapperDispatcher = Dispatcher.CurrentDispatcher;
-
-            MainViewModel viewModel = new MainViewModel(this);
-
-            MainWindow view = new MainWindow { DataContext = viewModel };
-            view.Closed += HandleViewClosed;
-
-            Engine.Detect();
-            view.Show();
-
-            Dispatcher.Run();
+            WixEngine wixEngine = new WixEngine(this);
+            guiApplication = new GuiApplication(wixEngine);
+            guiApplication.Run();
 
             Engine.Quit(0);
         }
 
-        private static void HandleViewClosed(object sender, EventArgs e)
+        public void InvokeShutdown()
         {
-            bootstrapperDispatcher.InvokeShutdown();
-        }
-
-        public void InvokeShutDown()
-        {
-            bootstrapperDispatcher.InvokeShutdown();
-        }
-
-        protected override void OnPlanComplete(PlanCompleteEventArgs args)
-        {
-            base.OnPlanComplete(args);
-
-            if (args.Status >= 0)
-                Engine.Apply(System.IntPtr.Zero);
+            guiApplication.InvokeShutdown();
         }
     }
 }

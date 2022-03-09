@@ -24,22 +24,22 @@ namespace DustInTheWind.BundleWithGui.Gui.Commands
     internal class ExitCommand : ICommand
     {
         private static Dispatcher dispatcher;
-        private readonly CustomBootstrapperApplication bootstrapperApplication;
+        private readonly IWixEngine wixEngine;
         private bool canExecute = true;
 
         public event EventHandler CanExecuteChanged;
 
-        public ExitCommand(CustomBootstrapperApplication bootstrapperApplication)
+        public ExitCommand(IWixEngine wixEngine)
         {
-            this.bootstrapperApplication = bootstrapperApplication ?? throw new ArgumentNullException(nameof(bootstrapperApplication));
+            this.wixEngine = wixEngine ?? throw new ArgumentNullException(nameof(wixEngine));
 
             dispatcher = Dispatcher.CurrentDispatcher;
 
-            this.bootstrapperApplication.PlanBegin += HandlePlanBegin;
-            this.bootstrapperApplication.ApplyComplete += HandleApplyComplete;
+            wixEngine.PlanBegin += HandlePlanBegin;
+            wixEngine.ApplyComplete += HandleApplyComplete;
         }
 
-        private void HandlePlanBegin(object sender, PlanBeginEventArgs e)
+        private void HandlePlanBegin(object sender, EventArgs e)
         {
             dispatcher.Invoke(() =>
             {
@@ -48,7 +48,7 @@ namespace DustInTheWind.BundleWithGui.Gui.Commands
             });
         }
 
-        private void HandleApplyComplete(object sender, ApplyCompleteEventArgs e)
+        private void HandleApplyComplete(object sender, EventArgs e)
         {
             dispatcher.Invoke(() =>
             {
@@ -64,7 +64,7 @@ namespace DustInTheWind.BundleWithGui.Gui.Commands
 
         public void Execute(object parameter)
         {
-            bootstrapperApplication.InvokeShutDown();
+            wixEngine.InvokeShutDown();
         }
 
         protected virtual void OnCanExecuteChanged()

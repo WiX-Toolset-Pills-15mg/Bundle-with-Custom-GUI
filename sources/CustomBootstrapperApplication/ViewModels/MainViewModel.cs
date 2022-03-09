@@ -17,14 +17,12 @@
 using System;
 using System.Windows.Threading;
 using DustInTheWind.BundleWithGui.Gui.Commands;
-using Microsoft.Tools.WindowsInstallerXml.Bootstrapper;
 
 namespace DustInTheWind.BundleWithGui.Gui.ViewModels
 {
     internal class MainViewModel : ViewModelBase
     {
         private static Dispatcher dispatcher;
-        private readonly CustomBootstrapperApplication bootstrapperApplication;
 
         private bool isLoading;
 
@@ -44,21 +42,19 @@ namespace DustInTheWind.BundleWithGui.Gui.ViewModels
 
         public ExitCommand ExitCommand { get; }
 
-        public MainViewModel(CustomBootstrapperApplication bootstrapperApplication)
+        public MainViewModel(IWixEngine wixEngine)
         {
-            this.bootstrapperApplication = bootstrapperApplication ?? throw new ArgumentNullException(nameof(bootstrapperApplication));
-
             dispatcher = Dispatcher.CurrentDispatcher;
 
-            InstallCommand = new InstallCommand(bootstrapperApplication);
-            UninstallCommand = new UninstallCommand(bootstrapperApplication);
-            ExitCommand = new ExitCommand(bootstrapperApplication);
+            InstallCommand = new InstallCommand(wixEngine);
+            UninstallCommand = new UninstallCommand(wixEngine);
+            ExitCommand = new ExitCommand(wixEngine);
 
-            this.bootstrapperApplication.PlanBegin += HandlePlanBegin;
-            this.bootstrapperApplication.ApplyComplete += HandleApplyComplete;
+            wixEngine.PlanBegin += HandlePlanBegin;
+            wixEngine.ApplyComplete += HandleApplyComplete;
         }
 
-        private void HandlePlanBegin(object sender, PlanBeginEventArgs e)
+        private void HandlePlanBegin(object sender, EventArgs e)
         {
             dispatcher.Invoke(() =>
             {
@@ -66,7 +62,7 @@ namespace DustInTheWind.BundleWithGui.Gui.ViewModels
             });
         }
 
-        private void HandleApplyComplete(object sender, ApplyCompleteEventArgs e)
+        private void HandleApplyComplete(object sender, EventArgs e)
         {
             dispatcher.Invoke(() =>
             {
