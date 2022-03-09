@@ -16,11 +16,12 @@
 
 using System;
 using System.Windows.Threading;
-using DustInTheWind.BundleWithGui.Gui.Commands;
+using DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Domain;
+using DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Presentation.Commands;
 
-namespace DustInTheWind.BundleWithGui.Gui.ViewModels
+namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Presentation.ViewModels
 {
-    internal class MainViewModel : ViewModelBase
+    public class MainViewModel : ViewModelBase
     {
         private static Dispatcher dispatcher;
 

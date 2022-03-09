@@ -16,23 +16,15 @@
 
 using System;
 
-namespace DustInTheWind.BundleWithGui.Gui
+namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Domain
 {
-    internal interface IWixEngine
+    public class DetectPackageEventArgs : EventArgs
     {
-        event EventHandler<DetectPackageEventArgs> DetectPackageComplete;
-        event EventHandler PlanBegin;
-        event EventHandler<PlanCompleteEventArgs> PlanComplete;
-        event EventHandler ApplyComplete;
+        public PackageState State { get; }
 
-        void Detect();
-
-        void PlanInstall();
-
-        void PlanUninstall();
-
-        void Apply();
-        
-        void InvokeShutDown();
+        public DetectPackageEventArgs(PackageState state)
+        {
+            State = state;
+        }
     }
 }

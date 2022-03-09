@@ -14,17 +14,15 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System;
-
-namespace DustInTheWind.BundleWithGui.Gui
+namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Domain
 {
-    internal class PlanCompleteEventArgs : EventArgs
+    public enum PackageState
     {
-        public int Status { get; }
-
-        public PlanCompleteEventArgs(int status)
-        {
-            Status = status;
-        }
+        Unknown,
+        Obsolete,
+        Absent,
+        Cached,
+        Present,
+        Superseded,
     }
 }

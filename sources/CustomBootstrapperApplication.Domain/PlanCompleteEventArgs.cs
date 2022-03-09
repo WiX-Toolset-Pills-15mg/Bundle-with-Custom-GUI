@@ -14,18 +14,17 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System.Windows;
+using System;
 
-namespace DustInTheWind.BundleWithGui.Gui.Views
+namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Domain
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public class PlanCompleteEventArgs : EventArgs
     {
-        public MainWindow()
+        public int Status { get; }
+
+        public PlanCompleteEventArgs(int status)
         {
-            InitializeComponent();
+            Status = status;
         }
     }
 }

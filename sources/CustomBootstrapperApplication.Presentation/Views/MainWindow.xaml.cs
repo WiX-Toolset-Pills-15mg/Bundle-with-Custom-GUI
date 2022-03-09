@@ -14,15 +14,18 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace DustInTheWind.BundleWithGui.Gui
+using System.Windows;
+
+namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Presentation.Views
 {
-    internal enum PackageState
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
     {
-        Unknown,
-        Obsolete,
-        Absent,
-        Cached,
-        Present,
-        Superseded,
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
     }
 }

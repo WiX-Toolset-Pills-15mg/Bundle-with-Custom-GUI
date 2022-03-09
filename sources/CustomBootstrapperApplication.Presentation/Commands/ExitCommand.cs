@@ -17,11 +17,11 @@
 using System;
 using System.Windows.Input;
 using System.Windows.Threading;
-using Microsoft.Tools.WindowsInstallerXml.Bootstrapper;
+using DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Domain;
 
-namespace DustInTheWind.BundleWithGui.Gui.Commands
+namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Presentation.Commands
 {
-    internal class ExitCommand : ICommand
+    public class ExitCommand : ICommand
     {
         private static Dispatcher dispatcher;
         private readonly IWixEngine wixEngine;

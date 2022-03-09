@@ -15,9 +15,11 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 using System;
+using DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Domain;
 using Microsoft.Tools.WindowsInstallerXml.Bootstrapper;
+using PlanCompleteEventArgs = DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Domain.PlanCompleteEventArgs;
 
-namespace DustInTheWind.BundleWithGui.Gui
+namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication
 {
     internal class WixEngine : IWixEngine
     {

@@ -14,17 +14,18 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
-namespace DustInTheWind.BundleWithGui.Gui
+namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Presentation
 {
-    internal class DetectPackageEventArgs : EventArgs
+    public class ViewModelBase : INotifyPropertyChanged
     {
-        public PackageState State { get; }
+        public event PropertyChangedEventHandler PropertyChanged;
 
-        public DetectPackageEventArgs(PackageState state)
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            State = state;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

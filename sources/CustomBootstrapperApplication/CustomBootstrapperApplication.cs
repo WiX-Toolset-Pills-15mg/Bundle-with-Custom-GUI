@@ -14,9 +14,10 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+using System;
 using Microsoft.Tools.WindowsInstallerXml.Bootstrapper;
 
-namespace DustInTheWind.BundleWithGui.Gui
+namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication
 {
     public class CustomBootstrapperApplication : BootstrapperApplication
     {
@@ -24,13 +25,20 @@ namespace DustInTheWind.BundleWithGui.Gui
 
         protected override void Run()
         {
-            Engine.Log(LogLevel.Verbose, "Launching custom Bootstrapper Application UX");
+            try
+            {
+                Engine.Log(LogLevel.Verbose, "Launching custom Bootstrapper Application UX");
 
-            WixEngine wixEngine = new WixEngine(this);
-            guiApplication = new GuiApplication(wixEngine);
-            guiApplication.Run();
+                WixEngine wixEngine = new WixEngine(this);
+                guiApplication = new GuiApplication(wixEngine);
+                guiApplication.Run();
 
-            Engine.Quit(0);
+                Engine.Quit(0);
+            }
+            catch (Exception ex)
+            {
+                Engine.Log(LogLevel.Error, $"ERROR: {ex}");
+            }
         }
 
         public void InvokeShutdown()

@@ -17,11 +17,11 @@
 using System;
 using System.Windows.Input;
 using System.Windows.Threading;
-using Microsoft.Tools.WindowsInstallerXml.Bootstrapper;
+using DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Domain;
 
-namespace DustInTheWind.BundleWithGui.Gui.Commands
+namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Presentation.Commands
 {
-    internal class InstallCommand : ICommand
+    public class UninstallCommand : ICommand
     {
         private static Dispatcher dispatcher;
         private readonly IWixEngine wixEngine;
@@ -29,7 +29,7 @@ namespace DustInTheWind.BundleWithGui.Gui.Commands
 
         public event EventHandler CanExecuteChanged;
 
-        public InstallCommand(IWixEngine wixEngine)
+        public UninstallCommand(IWixEngine wixEngine)
         {
             this.wixEngine = wixEngine ?? throw new ArgumentNullException(nameof(wixEngine));
 
@@ -38,7 +38,7 @@ namespace DustInTheWind.BundleWithGui.Gui.Commands
             wixEngine.PlanBegin += HandlePlanBegin;
             wixEngine.DetectPackageComplete += HandleDetectPackageComplete;
         }
-        
+
         private void HandlePlanBegin(object sender, EventArgs e)
         {
             dispatcher.Invoke(() =>
@@ -52,7 +52,7 @@ namespace DustInTheWind.BundleWithGui.Gui.Commands
         {
             dispatcher.Invoke(() =>
             {
-                if (e.State == PackageState.Absent)
+                if (e.State == PackageState.Present)
                 {
                     canExecute = true;
                     OnCanExecuteChanged();
@@ -67,7 +67,7 @@ namespace DustInTheWind.BundleWithGui.Gui.Commands
 
         public void Execute(object parameter)
         {
-            wixEngine.PlanInstall();
+            wixEngine.PlanUninstall();
         }
 
         protected virtual void OnCanExecuteChanged()

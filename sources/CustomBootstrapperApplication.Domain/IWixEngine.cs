@@ -14,18 +14,25 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
+using System;
 
-namespace DustInTheWind.BundleWithGui.Gui
+namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Domain
 {
-    internal class ViewModelBase : INotifyPropertyChanged
+    public interface IWixEngine
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        event EventHandler<DetectPackageEventArgs> DetectPackageComplete;
+        event EventHandler PlanBegin;
+        event EventHandler<PlanCompleteEventArgs> PlanComplete;
+        event EventHandler ApplyComplete;
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        void Detect();
+
+        void PlanInstall();
+
+        void PlanUninstall();
+
+        void Apply();
+        
+        void InvokeShutDown();
     }
 }

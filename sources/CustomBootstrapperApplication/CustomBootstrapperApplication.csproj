@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{1FF19117-6F64-4FAF-A152-51FB188AE3CE}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>DustInTheWind.BundleWithGui.Gui</RootNamespace>
+    <RootNamespace>DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication</RootNamespace>
     <AssemblyName>CustomBootstrapperApplication</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -46,6 +46,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Program Files (x86)\WiX Toolset v3.11\SDK\Microsoft.Deployment.WindowsInstaller.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -53,39 +55,12 @@
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="WindowsBase" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\ExitCommand.cs" />
-    <Compile Include="Commands\InstallCommand.cs" />
-    <Compile Include="Commands\UninstallCommand.cs" />
-    <Compile Include="DetectPackageEventArgs.cs" />
     <Compile Include="GuiApplication.cs" />
-    <Compile Include="PackageState.cs" />
     <Compile Include="PackageStateExtensions.cs" />
-    <Compile Include="PlanCompleteEventArgs.cs" />
     <Compile Include="WixEngine.cs" />
-    <Page Include="Themes\ButtonStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Compile Include="IWixEngine.cs" />
-    <Compile Include="ViewModelBase.cs" />
-    <Page Include="Themes\TextBlockStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="CustomBootstrapperApplication.cs" />
-    <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="Views\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -97,6 +72,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CustomBootstrapperApplication.Domain\CustomBootstrapperApplication.Domain.csproj">
+      <Project>{C115EDE2-F72A-4960-A47F-E8A84A8ABAFE}</Project>
+      <Name>CustomBootstrapperApplication.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CustomBootstrapperApplication.Presentation\CustomBootstrapperApplication.Presentation.csproj">
+      <Project>{ed022c78-a26a-43c2-a11d-63a6767aecfc}</Project>
+      <Name>CustomBootstrapperApplication.Presentation</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

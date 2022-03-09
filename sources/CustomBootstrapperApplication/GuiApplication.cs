@@ -16,10 +16,11 @@
 
 using System;
 using System.Windows.Threading;
-using DustInTheWind.BundleWithGui.Gui.ViewModels;
-using DustInTheWind.BundleWithGui.Gui.Views;
+using DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Domain;
+using DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Presentation.ViewModels;
+using DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Presentation.Views;
 
-namespace DustInTheWind.BundleWithGui.Gui
+namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication
 {
     internal class GuiApplication
     {
