@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomBootstrapperApplicati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomBootstrapperApplication.Domain", "CustomBootstrapperApplication.Domain\CustomBootstrapperApplication.Domain.csproj", "{C115EDE2-F72A-4960-A47F-E8A84A8ABAFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopApplication", "FakeInstallerApplication\DesktopApplication.csproj", "{C4328033-7066-4498-BB14-19A93E127276}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopApplication", "DesktopApplication\DesktopApplication.csproj", "{C4328033-7066-4498-BB14-19A93E127276}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CEEF6596-9F7D-44AC-A404-93FAEFC532B1}"
 	ProjectSection(SolutionItems) = preProject
