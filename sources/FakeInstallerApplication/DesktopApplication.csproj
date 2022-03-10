@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C4328033-7066-4498-BB14-19A93E127276}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>DustInTheWind.BundleWithCustomGui.FakeInstallerApplication</RootNamespace>
-    <AssemblyName>DustInTheWind.BundleWithCustomGui.FakeInstallerApplication</AssemblyName>
+    <RootNamespace>DustInTheWind.BundleWithCustomGui.DesktopApplication</RootNamespace>
+    <AssemblyName>DustInTheWind.BundleWithCustomGui.DesktopApplication</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

@@ -17,7 +17,7 @@
 using System.Windows;
 using DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Presentation;
 
-namespace DustInTheWind.BundleWithCustomGui.FakeInstallerApplication
+namespace DustInTheWind.BundleWithCustomGui.DesktopApplication
 {
     /// <summary>
     /// Interaction logic for App.xaml

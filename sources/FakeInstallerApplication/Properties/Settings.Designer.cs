@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DustInTheWind.BundleWithCustomGui.FakeInstallerApplication.Properties {
+namespace DustInTheWind.BundleWithCustomGui.DesktopApplication.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

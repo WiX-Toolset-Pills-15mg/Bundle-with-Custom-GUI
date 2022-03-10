@@ -24,19 +24,19 @@ namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Presen
 {
     public class GuiApplication
     {
-        private readonly IWixEngine wixEngine;
+        private readonly IInstallerEngine installerEngine;
         private readonly MainWindow mainView;
         private readonly Dispatcher dispatcher;
 
-        public GuiApplication(IWixEngine wixEngine)
+        public GuiApplication(IInstallerEngine installerEngine)
         {
-            this.wixEngine = wixEngine ?? throw new ArgumentNullException(nameof(wixEngine));
+            this.installerEngine = installerEngine ?? throw new ArgumentNullException(nameof(installerEngine));
 
-            wixEngine.PlanComplete += HandlePlanComplete;
+            installerEngine.PlanComplete += HandlePlanComplete;
 
             dispatcher = Dispatcher.CurrentDispatcher;
 
-            MainViewModel viewModel = new MainViewModel(wixEngine);
+            MainViewModel viewModel = new MainViewModel(installerEngine);
 
             mainView = new MainWindow { DataContext = viewModel };
             mainView.Closed += HandleMainViewClosed;
@@ -44,18 +44,18 @@ namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Presen
 
         private void HandleMainViewClosed(object sender, EventArgs e)
         {
-            wixEngine.InvokeShutDown();
+            installerEngine.InvokeShutDown();
         }
 
         private void HandlePlanComplete(object sender, PlanCompleteEventArgs e)
         {
             if (e.Status >= 0)
-                wixEngine.Apply();
+                installerEngine.Apply();
         }
 
         public void Run()
         {
-            wixEngine.Detect();
+            installerEngine.Detect();
             mainView.Show();
 
             Dispatcher.Run();

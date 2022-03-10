@@ -43,16 +43,16 @@ namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Presen
 
         public ExitCommand ExitCommand { get; }
 
-        public MainViewModel(IWixEngine wixEngine)
+        public MainViewModel(IInstallerEngine installerEngine)
         {
             dispatcher = Dispatcher.CurrentDispatcher;
 
-            InstallCommand = new InstallCommand(wixEngine);
-            UninstallCommand = new UninstallCommand(wixEngine);
-            ExitCommand = new ExitCommand(wixEngine);
+            InstallCommand = new InstallCommand(installerEngine);
+            UninstallCommand = new UninstallCommand(installerEngine);
+            ExitCommand = new ExitCommand(installerEngine);
 
-            wixEngine.PlanBegin += HandlePlanBegin;
-            wixEngine.ApplyComplete += HandleApplyComplete;
+            installerEngine.PlanBegin += HandlePlanBegin;
+            installerEngine.ApplyComplete += HandleApplyComplete;
         }
 
         private void HandlePlanBegin(object sender, EventArgs e)

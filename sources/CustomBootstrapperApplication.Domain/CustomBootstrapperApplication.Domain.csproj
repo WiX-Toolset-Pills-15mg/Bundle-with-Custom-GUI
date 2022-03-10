@@ -45,7 +45,7 @@
       <Link>Properties\AssemblyInfo.Shared.cs</Link>
     </Compile>
     <Compile Include="DetectEventArgs.cs" />
-    <Compile Include="IWixEngine.cs" />
+    <Compile Include="IInstallerEngine.cs" />
     <Compile Include="Package.cs" />
     <Compile Include="PackageState.cs" />
     <Compile Include="PlanCompleteEventArgs.cs" />

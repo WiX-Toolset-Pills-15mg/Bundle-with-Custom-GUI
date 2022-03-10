@@ -18,7 +18,7 @@ using System;
 
 namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Domain
 {
-    public interface IWixEngine
+    public interface IInstallerEngine
     {
         event EventHandler<DetectEventArgs> DetectComplete;
         event EventHandler PlanBegin;

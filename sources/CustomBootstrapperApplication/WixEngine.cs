@@ -22,7 +22,7 @@ using PlanCompleteEventArgs = DustInTheWind.BundleWithCustomGui.CustomBootstrapp
 
 namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication
 {
-    internal class WixEngine : IWixEngine
+    internal class WixEngine : IInstallerEngine
     {
         private readonly CustomBootstrapperApplication customBootstrapperApplication;
         private readonly List<Package> packages = new List<Package>();

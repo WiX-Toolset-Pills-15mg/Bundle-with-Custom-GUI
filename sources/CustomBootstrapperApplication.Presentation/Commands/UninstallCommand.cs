@@ -25,19 +25,19 @@ namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Presen
     public class UninstallCommand : ICommand
     {
         private static Dispatcher dispatcher;
-        private readonly IWixEngine wixEngine;
+        private readonly IInstallerEngine installerEngine;
         private volatile bool canExecute;
 
         public event EventHandler CanExecuteChanged;
 
-        public UninstallCommand(IWixEngine wixEngine)
+        public UninstallCommand(IInstallerEngine installerEngine)
         {
-            this.wixEngine = wixEngine ?? throw new ArgumentNullException(nameof(wixEngine));
+            this.installerEngine = installerEngine ?? throw new ArgumentNullException(nameof(installerEngine));
 
             dispatcher = Dispatcher.CurrentDispatcher;
 
-            wixEngine.PlanBegin += HandlePlanBegin;
-            wixEngine.DetectComplete += HandleDetectComplete;
+            installerEngine.PlanBegin += HandlePlanBegin;
+            installerEngine.DetectComplete += HandleDetectComplete;
         }
 
         private void HandlePlanBegin(object sender, EventArgs e)
@@ -70,7 +70,7 @@ namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Presen
 
         public void Execute(object parameter)
         {
-            wixEngine.PlanUninstall();
+            installerEngine.PlanUninstall();
         }
 
         protected virtual void OnCanExecuteChanged()

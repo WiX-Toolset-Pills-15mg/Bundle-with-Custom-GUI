@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DustInTheWind.BundleWithCustomGui.FakeInstallerApplication.Properties {
+namespace DustInTheWind.BundleWithCustomGui.DesktopApplication.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace DustInTheWind.BundleWithCustomGui.FakeInstallerApplication.Properties 
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DustInTheWind.BundleWithCustomGui.FakeInstallerApplication.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DustInTheWind.BundleWithCustomGui.DesktopApplication.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

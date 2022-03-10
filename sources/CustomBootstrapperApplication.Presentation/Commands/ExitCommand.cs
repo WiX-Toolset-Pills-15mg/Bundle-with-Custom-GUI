@@ -24,19 +24,19 @@ namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Presen
     public class ExitCommand : ICommand
     {
         private static Dispatcher dispatcher;
-        private readonly IWixEngine wixEngine;
+        private readonly IInstallerEngine installerEngine;
         private volatile bool canExecute = true;
 
         public event EventHandler CanExecuteChanged;
 
-        public ExitCommand(IWixEngine wixEngine)
+        public ExitCommand(IInstallerEngine installerEngine)
         {
-            this.wixEngine = wixEngine ?? throw new ArgumentNullException(nameof(wixEngine));
+            this.installerEngine = installerEngine ?? throw new ArgumentNullException(nameof(installerEngine));
 
             dispatcher = Dispatcher.CurrentDispatcher;
 
-            wixEngine.PlanBegin += HandlePlanBegin;
-            wixEngine.ApplyComplete += HandleApplyComplete;
+            installerEngine.PlanBegin += HandlePlanBegin;
+            installerEngine.ApplyComplete += HandleApplyComplete;
         }
 
         private void HandlePlanBegin(object sender, EventArgs e)
@@ -64,7 +64,7 @@ namespace DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Presen
 
         public void Execute(object parameter)
         {
-            wixEngine.InvokeShutDown();
+            installerEngine.InvokeShutDown();
         }
 
         protected virtual void OnCanExecuteChanged()

@@ -19,9 +19,9 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Domain;
 
-namespace DustInTheWind.BundleWithCustomGui.FakeInstallerApplication
+namespace DustInTheWind.BundleWithCustomGui.DesktopApplication
 {
-    internal class FakeEngine : IWixEngine
+    internal class FakeEngine : IInstallerEngine
     {
         private readonly App app;
 
