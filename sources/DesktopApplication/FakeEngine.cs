@@ -56,7 +56,7 @@ namespace DustInTheWind.BundleWithCustomGui.DesktopApplication
 
         public async void Detect()
         {
-            await Task.Delay(2000);
+            await Task.Delay(1000);
 
             DetectEventArgs args = new DetectEventArgs(packages);
             OnDetectComplete(args);

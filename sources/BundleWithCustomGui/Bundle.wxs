@@ -31,17 +31,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         <WixVariable Id="WixMbaPrereqLicenseUrl" Value="NetfxLicense.rtf" />
 
         <BootstrapperApplicationRef Id="ManagedBootstrapperApplicationHost">
+            <Payload SourceFile="$(var.CustomBootstrapperApplication.TargetPath)"/>
             <Payload SourceFile="$(var.CustomBootstrapperApplication.TargetDir)\BootstrapperCore.config"/>
             <Payload SourceFile="$(var.CustomBootstrapperApplication.TargetDir)\BootstrapperCore.dll"/>
-            <Payload SourceFile="$(var.CustomBootstrapperApplication.TargetDir)$(var.CustomBootstrapperApplication.TargetName).dll"/>
             <Payload SourceFile="$(var.CustomBootstrapperApplication.TargetDir)DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Domain.dll"/>
             <Payload SourceFile="$(var.CustomBootstrapperApplication.TargetDir)DustInTheWind.BundleWithCustomGui.CustomBootstrapperApplication.Presentation.dll"/>
             <Payload SourceFile="$(var.CustomBootstrapperApplication.TargetDir)\Microsoft.Deployment.WindowsInstaller.dll"/>
         </BootstrapperApplicationRef>
 
         <Chain>
-            <MsiPackage SourceFile="$(var.Installer1.TargetDir)$(var.Installer1.TargetName).msi" />
-            <MsiPackage SourceFile="$(var.Installer2.TargetDir)$(var.Installer2.TargetName).msi" />
+            <MsiPackage SourceFile="$(var.Installer1.TargetPath)" />
+            <MsiPackage SourceFile="$(var.Installer2.TargetPath)" />
         </Chain>
 
     </Bundle>
