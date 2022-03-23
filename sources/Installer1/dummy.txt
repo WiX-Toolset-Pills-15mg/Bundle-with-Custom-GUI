@@ -5,4 +5,4 @@ The "Bundle with Custom GUI" project is an example that demonstrates how to crea
 using WPF.
 
 For more details please chech the GitHub repository:
-https://github.com/WiX-Toolset-Pills-15mg/Bundle-with-GUI
+https://github.com/WiX-Toolset-Pills-15mg/Bundle-with-Custom-GUI
